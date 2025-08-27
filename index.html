@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Student Registration System</title>
+    <meta name="description" content="A system to register, view, edit, and delete student records.">
+    
+    <!-- Google Fonts for a nice, clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Added a version number to force the browser to reload the CSS file -->
+    <link rel="stylesheet" href="style.css?v=1.2">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Student Registration System</h1>
+            <p>Manage student records with ease. Add, view, update, and delete entries seamlessly.</p>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <h2 id="form-title">Add New Student</h2>
+                <form id="student-form">
+                    <!-- Hidden input to store ID during edits -->
+                    <input type="hidden" id="student-id">
+                    
+                    <div class="form-group">
+                        <label for="student-name">Student Name</label>
+                        <input type="text" id="student-name" placeholder="e.g., Chakri" required>
+                        <div class="error-message">Name must contain only letters and spaces.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-uid">Student ID</label>
+                        <input type="text" id="student-uid" placeholder="e.g., 11515151" required>
+                        <div class="error-message">Student ID must contain only numbers.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-id">Email ID</label>
+                        <input type="email" id="email-id" placeholder="e.g., chakri@gmail.com" required>
+                         <div class="error-message">Please enter a valid email address.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-no">Contact No</label>
+                        <input type="text" id="contact-no" placeholder="e.g., 8187826411" required>
+                        <div class="error-message">Contact number must be at least 10 digits and contain only numbers.</div>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submit-btn">Add Student</button>
+                </form>
+            </section>
+
+            <section class="display-section">
+                <h2>Registered Students</h2>
+                <div class="table-container" id="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Student ID</th>
+                                <th>Email</th>
+                                <th>Contact No</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-list">
+                            <!-- Student rows will be injected here by JavaScript -->
+                        </tbody>
+                    </table>
+                    <p id="no-records-msg">No student records found. Add a new student to get started!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
